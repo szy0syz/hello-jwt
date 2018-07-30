@@ -30,7 +30,7 @@ let readBody = request => {
 // 为每个用户生成不同token
 let createToken = user => {
   return jwt.sign(
-    { userId: user.id },  // payload (以后可以根据token拿到捣乱者的身份信息))
+    { userId: user.id },  // payload (以后可以根据token拿到捣乱者的身份信息)
     signatrue,            // secretOrPrivateKey
      { expiresIn: '2h' }  // options
   )
