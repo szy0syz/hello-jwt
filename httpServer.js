@@ -32,7 +32,7 @@ let createToken = user => {
   return jwt.sign(
     { userId: user.id },  // payload (以后可以根据token拿到捣乱者的身份信息))
     signatrue,            // secretOrPrivateKey
-     { expiresIn: '10s' }  // options
+     { expiresIn: '2h' }  // options
   )
 }
 
@@ -102,3 +102,6 @@ let server = http.createServer((req, res) => {
 })
 
 server.listen(3001)
+
+// curl -d '{"email":"szy0syz@gmail.com", "password":"jerry"}' -H "Content-Type: application/json" -X POST http://localhost:3001/tokens
+// curl http://localhost:3001/private -H "authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTUzMjk1Nzg2MiwiZXhwIjoxNTMyOTY1MDYyfQ.Dn9gOxUSp5h9GJ_4cURwMGYasITojqA1arE9dZk-Nbc"
