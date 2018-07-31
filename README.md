@@ -29,3 +29,10 @@
 * 初始化koa
 * 声明路由，在`/api`路由注册时，前面加个`checkToken`中间件
 * 解析post的body，开启koa
+
+## 使用jwt概要
+
+1. 配置jwt
+2. 创建token的逻辑函数
+3. 发送token的业务逻辑
+4. 验证jwt
